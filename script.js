@@ -7,7 +7,7 @@ btnAcpt.addEventListener("click", handleAcptClick);
 btnDeny.addEventListener("click", handleDenyClick);
 
 function handleAcptClick() {
-  title.innerHTML = "Chúc mừng nhaa";
+  title.innerHTML = "Trả lời đúng rồi đó!!! Me toooo.";
   if (!btnDeny.classList.contains("hide")) {
     img.src = "imgs/thinking.jpg";
     title.innerHTML = "Suy nghĩ kĩ chưa z, cho suy nghĩ lại";
@@ -29,5 +29,5 @@ function handleAcptClick() {
 function handleDenyClick() {
   this.classList.add("hide");
   btnAcpt.style.width = "300px";
-  title.innerHTML = "Bạn đã loại được đáp án sai rồi!!!";
+  title.innerHTML = "Bạn đã loại được đáp án sai rồi đó!!!";
 }
