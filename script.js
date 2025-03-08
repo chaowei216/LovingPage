@@ -90,12 +90,8 @@ function showText(text) {
 
 function showImg(imgSrc) {
   setTimeout(() => {
-    img.style.opacity = "0";
-    setTimeout(() => {
-      img.src = imgSrc;
-      img.style.opacity = "1";
-    }, 100);
-  }, 100);
+    img.src = imgSrc;
+  }, 150);
 }
 
 function showBtn(btnText) {
