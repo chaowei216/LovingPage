@@ -94,8 +94,8 @@ function showImg(imgSrc) {
     setTimeout(() => {
       img.src = imgSrc;
       img.style.opacity = "1";
-    }, 300);
-  }, 300);
+    }, 200);
+  }, 200);
 }
 
 function showBtn(btnText) {
