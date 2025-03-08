@@ -1,33 +1,109 @@
 var title = document.querySelector("#title");
-var btnAcpt = document.querySelector("#acpt");
-var btnDeny = document.querySelector("#deny");
+var btn = document.querySelector("#btnAction");
 var img = document.querySelector("#header-img");
+var btnClickCount = 0;
 
-btnAcpt.addEventListener("click", handleAcptClick);
-btnDeny.addEventListener("click", handleDenyClick);
+btnAction.addEventListener("click", handleClick);
 
-function handleAcptClick() {
-  title.innerHTML = "Trả lời đúng rồi đó!!! Me toooo.";
-  if (!btnDeny.classList.contains("hide")) {
-    img.src = "imgs/thinking.jpg";
-    title.innerHTML = "Suy nghĩ kĩ chưa z, cho suy nghĩ lại";
-    this.classList.add("hide");
-    btnDeny.classList.add("hide");
-    setTimeout(function () {
-      img.src = "imgs/waiting.gif";
-      title.innerHTML = "Chọn lại điiii";
-      btnAcpt.classList.remove("hide");
-      btnDeny.classList.remove("hide");
-    }, 3000);
-  } else {
-    this.classList.add("hide");
-
-    img.src = "imgs/final.gif";
+function handleClick() {
+  if (btnClickCount == 0) {
+    showText("Hôm nay là 8/3 á...");
+    showImg("imgs/img1.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 1) {
+    showText("Nên mình muốn nói rằng...");
+    showImg("imgs/begin.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 2) {
+    showText("Bạn là 1 người xinh đẹp và cuốn hút nhất mình từng gặp!!!");
+    showImg("imgs/img2.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 3) {
+    showText("Nên là mong bạn sẽ luôn vui vẻ và tươi cười thật nhiềuuuu");
+    showImg("imgs/img3.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 4) {
+    showText("À chúc vậy thui, giờ là trải lòng ha !!");
+    showImg("imgs/img4.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 5) {
+    showText("Mình là người không tự tin về bản thân rất nhiều");
+    showImg("imgs/img5.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 6) {
+    showText("Nhưng mà từ khi gặp bạn thì mọi thứ thay đổi rồi á");
+    showImg("imgs/img6.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 7) {
+    showText(
+      "Mình tự tin hơn và làm những thứ mình tưởng rằng mình không làm nổi"
+    );
+    showImg("imgs/img7.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 8) {
+    showText("Nên là với mình thì bạn là một người rất đặc biệt");
+    showImg("imgs/img8.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 9) {
+    showText(
+      "Mặc dù mình năng động nhưng lại rất ghét phải nghe người khác nói quá nhiều"
+    );
+    showImg("imgs/img9.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 10) {
+    showText("Nhưng không hiểu sao bạn lại là 1 ngoại lệ");
+    showImg("imgs/img10.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 11) {
+    showText("Mình còn nghĩ là 1 ngày đi 8 tiếng để nghe còn chưa đủ nữa");
+    showImg("imgs/img11.gif");
+    showBtn("Tiếp tục");
+    btnClickCount++;
+  } else if (btnClickCount == 12) {
+    showText("Nên là ờm...........");
+    showImg("imgs/img12.gif");
+    btn.classList.add("hide");
+    btnClickCount++;
   }
 }
 
-function handleDenyClick() {
-  this.classList.add("hide");
-  btnAcpt.style.width = "300px";
-  title.innerHTML = "Bạn đã loại được đáp án sai rồi đó!!!";
+function showText(text) {
+  setTimeout(() => {
+    title.style.opacity = "0";
+    setTimeout(() => {
+      title.innerHTML = text;
+      title.style.opacity = "1";
+    }, 200);
+  }, 300);
+}
+
+function showImg(imgSrc) {
+  setTimeout(() => {
+    img.style.opacity = "0";
+    setTimeout(() => {
+      img.src = imgSrc;
+      img.style.opacity = "1";
+    }, 200);
+  }, 300);
+}
+
+function showBtn(btnText) {
+  setTimeout(() => {
+    btn.classList.add("hide");
+    setTimeout(() => {
+      btn.classList.remove("hide");
+      btn.innerHTML = btnText;
+    }, 200);
+  }, 300);
 }
